@@ -1,62 +1,14 @@
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=665539593)
+# External Lab: Create a File Size Formatter
 
-# Rust template
-
-_This template repository is part of a 4-week Rust course, [start on week 1 here](https://github.com/alfredodeza/rust-setup) if you want to learn more about Rust!_
-
-This Rust template is meant to help you get quickly started with a new project. It is [Codespaces enabled](https://docs.github.com/en/codespaces/overview) and it is pre-configured with useful extensions like the [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer&WT.mc_id=academic-0000-alfredodeza) and [GitHub Copilot](https://docs.github.com/en/copilot/quickstart)
-
-This repository is configured as a GitHub Template, so that you can start fresh with a new repository without carrying the history and commits of this repository. To get started you can click on the "Use this template" green button, or follow this [link directly](https://github.com/alfredodeza/rust-template/generate)
-
-This is the Rust template used as part of the [Rust Bootcamp](https://s.deza.pe/zjo). There are 4 weeks in total:
-
-- [week 1](https://github.com/alfredodeza/rust-setup) 
-- [week 2](https://github.com/alfredodeza/rust-fundamentals)
-- [week 3](https://github.com/alfredodeza/rust-structs-types-enums/)
-- [week 4](https://github.com/alfredodeza/applied-rust)
-- [Rust Template](https://github.com/alfredodeza/rust-template) 👈 You are here!
-  
-
-🚀 **Watch the Video course**
-
-[![O'Reilly](https://learning.oreilly.com/covers/urn:orm:video:28080717VIDEOPAIML/400w/)](https://s.deza.pe/zjo "Rust Bootcamp")
-
-## Get started
-
-To get started with this template, once you've [generated the repository](https://github.com/alfredodeza/rust-template/generate), run the following `cargo` command (replace my-project with the name of your project):
-
-```bash
-cargo init --name my-project .
+## Assignment
+In this lab, you will enhance a size formatter application in Rust. 
+Use the [example code](https://github.com/alfredodeza/rust-structs-types-enums/blob/main/examples/14-match-enums/match-enum/src/main.rs) to get started and get an idea on how to use enum and match to handle different sizes. You are tasked with extending the application to allow a user to pass in a String representing size and unit, and then returning a debug representation of a struct that shows all the different representations in KB, MB, and GB . 
+This is an example that takes an input and provides the output required:
+```shell
+$ cargo run "24 mb"
+Sizes { bytes: "24000000 bytes", kilobytes: "24000 kilobytes", megabytes: "24 megabytes", gigabytes: "0 gigabytes" }
 ```
 
-This will initialize the project with the name you provided. You can now start editing the `src/main.rs` file and start building your project.
+## Output
 
-## Make changes
-
-Make changes to this repository so that it reflects your own project. Start by updating the license which is currently set to MIT. You can do this by editing the `LICENSE` file. You can also update the `README.md` file to reflect a descriptiton of your own project.
-
-## GitHub Actions
-
-This template comes with a GitHub Actions workflow that will run on every push to the repository. The workflow will run `cargo build` and `cargo test` to make sure that your project builds and that all tests pass. You can find the workflow file in `.github/workflows/rust.yml`
-
-## GitHub Codespaces
-
-This template is [Codespaces enabled](https://docs.github.com/en/codespaces/overview). This means that you can start a new Codespace from this repository and start working on your project right away. To do this, click on the green "Code" button and select "Open with Codespaces". This will start a new Codespace for you and you can start editing the `src/main.rs` file right away.
-
-## Resources
-
-This template repository is part of a 4-week Rust course, [start on week 1 here](https://github.com/alfredodeza/rust-setup) if you want to learn more about Rust!
-
-**O'Reilly Courses**
-
-- [DevOps command-line tools in Python and Rust](https://learning.oreilly.com/videos/devops-command-line-tools/28037639VIDEOPAIML/)
-
-**Coursera Courses**
-
-- [MLOps Machine Learning Operations Specialization](https://www.coursera.org/specializations/mlops-machine-learning-duke)
-- [Linux and Bash for Data Engineering](https://www.coursera.org/learn/linux-and-bash-for-data-engineering-duke)
-- [Open Source Platforms for MLOps](https://www.coursera.org/learn/open-source-platforms-duke)
-- [Python Essentials for MLOps](https://www.coursera.org/learn/python-essentials-mlops-duke)
-- [Web Applications and Command-Line tools for Data Engineering](https://www.coursera.org/learn/web-app-command-line-tools-for-data-engineering-duke)
-- [Python and Pandas for Data Engineering](https://www.coursera.org/learn/python-and-pandas-for-data-engineering-duke)
-- [Scripting with Python and SQL for Data Engineering](https://www.coursera.org/learn/scripting-with-python-sql-for-data-engineering-duke)
+`fsize-formatter` will print the equivelant binary size for bytes, kilobytes, megabytes and gigabytes. The input must be a numerical value followed by a unit and enclosed in quotes, i.e. "100 mb". The unit value is case-insensitive, so (for instance) "100 MB" is also valid. If you enter any unit value other than "b", "kb", "mb" or "gb" (in upper- or lowercase), then you get an error. If you forget to enclose the input in quotes (`""`) you also get an error with a reminder to format the input correctly.
